@@ -30,7 +30,7 @@ rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT%{_javalibdir}
 
 cp build/resolver.jar $RPM_BUILD_ROOT%{_javalibdir}
-ln -sf resolver.jar $RPM_BUILD_ROOT/%{_javalibdir}/resolver-%{version}.jar
+ln -sf resolver.jar $RPM_BUILD_ROOT%{_javalibdir}/resolver-%{version}.jar
 
 %clean
 rm -rf $RPM_BUILD_ROOT
