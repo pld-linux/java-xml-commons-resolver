@@ -12,7 +12,7 @@ BuildRequires: 	jakarta-ant
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_javalibdir	/usr/share/java
+%define		_javalibdir	%{_datadir}/java
 
 %description
 The Apache XML Commons Resolver classes implement Catalog-based entity
