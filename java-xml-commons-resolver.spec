@@ -1,4 +1,5 @@
-Summary:	xml-commons-resolver
+Summary:	Apache XML Commons Resolver classes
+Summary(pl):	Klasy Apache XML Commons Resolver
 Name:		xml-commons-resolver
 Version:	1.0
 Release:	0.1
@@ -14,22 +15,27 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_javalibdir	/usr/share/java
 
 %description
-xml-commons-resolver
+The Apache XML Commons Resolver classes implement Catalog-based entity
+and URI resolution.
+
+%description -l pl
+Klasy Apache XML Commons Resolver s± implementacj± rozwi±zywania encji
+i URI na podstawie katalogu.
 
 %prep
 %setup -q
+
 rm -rf `find . -name "*.jar"`
-mv resolver.xml build.xml
+mv -f resolver.xml build.xml
 
 %build
 ant jar docs
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_javalibdir}
 
-mkdir -p $RPM_BUILD_ROOT%{_javalibdir}
-
-cp build/resolver.jar $RPM_BUILD_ROOT%{_javalibdir}
+install build/resolver.jar $RPM_BUILD_ROOT%{_javalibdir}
 ln -sf resolver.jar $RPM_BUILD_ROOT%{_javalibdir}/resolver-%{version}.jar
 
 %clean
