@@ -1,14 +1,14 @@
-Summary:        xml-commons-resolver
-Name:           xml-commons-resolver
-Version:        1.0
-Release:       	0.1
-License:        Apache Software License
+Summary:	xml-commons-resolver
+Name:		xml-commons-resolver
+Version:	1.0
+Release:	0.1
+License:	Apache Software License
 Group:		Development/Languages/Java
-Source0:        http://xml.apache.org/dist/commons/%{name}-1.0.tar.gz
+Source0:	http://xml.apache.org/dist/commons/%{name}-1.0.tar.gz
 # Source0-md5:	4f54cf02d211abd95513699d088ae968
-URL:            http://xml.apache.org/commons/
-BuildRequires:  jakarta-ant
-BuildArch:      noarch
+URL:		http://xml.apache.org/commons/
+BuildRequires: 	jakarta-ant
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_javalibdir	/usr/share/java
