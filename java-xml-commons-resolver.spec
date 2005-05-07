@@ -1,12 +1,13 @@
 Summary:	Apache XML Commons Resolver classes
 Summary(pl):	Klasy Apache XML Commons Resolver
 Name:		xml-commons-resolver
-Version:	1.0
-Release:	0.1
-License:	Apache Software License
+Version:	1.1
+Release:	1
+License:	Apache v1.1
 Group:		Development/Languages/Java
-Source0:	http://xml.apache.org/dist/commons/%{name}-1.0.tar.gz
-# Source0-md5:	4f54cf02d211abd95513699d088ae968
+Source0:	http://www.apache.org/dist/xml/commons/%{name}-%{version}.tar.gz
+# Source0-md5:	deb95bdf88687430445d34e8c11d475e
+Patch0:		%{name}-source1.4.patch
 URL:		http://xml.apache.org/commons/
 BuildRequires: 	jakarta-ant
 BuildArch:	noarch
@@ -24,12 +25,13 @@ i URI na podstawie katalogu.
 
 %prep
 %setup -q
+%patch0 -p1
 
 rm -rf `find . -name "*.jar"`
 mv -f resolver.xml build.xml
 
 %build
-ant jar docs
+ant jar javadocs
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -43,5 +45,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc KEYS README.* build/docs/javadocs
+%doc KEYS LICENSE.resolver.txt build/apidocs
 %{_javalibdir}/*.jar
