@@ -1,0 +1,19 @@
+--- xml-commons-resolver-1.1/resolver.xml.orig	2003-11-05 03:56:16.000000000 +0100
++++ xml-commons-resolver-1.1/resolver.xml	2005-05-07 18:29:37.121595000 +0200
+@@ -83,7 +83,7 @@
+ 
+    <echo message="Compiling..." />
+ 
+-   <javac srcdir="${src.dir}" destdir="${build.classes.dir}">
++   <javac srcdir="${src.dir}" destdir="${build.classes.dir}" source="1.4">
+      <!-- <classpath> not needed since Ant already supplies these Sep-03 -sc -->
+      <include name="${resolver.subdir}/*.java"/>
+      <include name="${resolver.subdir}/helpers/*.java"/>
+@@ -137,6 +137,7 @@
+     <mkdir dir="${docs.java.dir}"/>
+ 	  <javadoc sourcepath="${src.dir}"
+ 		   destdir="${docs.java.dir}"
++		   source="1.4"
+                    Overview="${src.dir}/${resolver.subdir}/overview.html"
+                    author="true"
+                    version="true"
