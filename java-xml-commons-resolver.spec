@@ -9,7 +9,7 @@ Source0:	http://www.apache.org/dist/xml/commons/%{name}-%{version}.tar.gz
 # Source0-md5:	deb95bdf88687430445d34e8c11d475e
 Patch0:		%{name}-source1.4.patch
 URL:		http://xml.apache.org/commons/
-BuildRequires: 	jakarta-ant
+BuildRequires:	ant
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
