@@ -1,5 +1,5 @@
 Summary:	Apache XML Commons Resolver classes
-Summary(pl.UTF-8):   Klasy Apache XML Commons Resolver
+Summary(pl.UTF-8):	Klasy Apache XML Commons Resolver
 Name:		xml-commons-resolver
 Version:	1.2
 Release:	1
@@ -26,7 +26,7 @@ i URI na podstawie katalogu.
 
 %package javadoc
 Summary:	javadoc documentation for Apache XML Commons Resolver
-Summary(pl.UTF-8):   Dokumentacja javadoc dla pakietu Apache XML Commons Resolver
+Summary(pl.UTF-8):	Dokumentacja javadoc dla pakietu Apache XML Commons Resolver
 Group:		Documentation
 Requires:	jpackage-utils
 
