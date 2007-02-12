@@ -1,5 +1,5 @@
 Summary:	Apache XML Commons Resolver classes
-Summary(pl):	Klasy Apache XML Commons Resolver
+Summary(pl.UTF-8):   Klasy Apache XML Commons Resolver
 Name:		xml-commons-resolver
 Version:	1.2
 Release:	1
@@ -20,20 +20,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The Apache XML Commons Resolver classes implement Catalog-based entity
 and URI resolution.
 
-%description -l pl
-Klasy Apache XML Commons Resolver s± implementacj± rozwi±zywania encji
+%description -l pl.UTF-8
+Klasy Apache XML Commons Resolver sÄ… implementacjÄ… rozwiÄ…zywania encji
 i URI na podstawie katalogu.
 
 %package javadoc
 Summary:	javadoc documentation for Apache XML Commons Resolver
-Summary(pl):	Dokumentacja javadoc dla pakietu Apache XML Commons Resolver
+Summary(pl.UTF-8):   Dokumentacja javadoc dla pakietu Apache XML Commons Resolver
 Group:		Documentation
 Requires:	jpackage-utils
 
 %description javadoc
 javadoc documentation for Apache XML Commons Resolver.
 
-%description javadoc -l pl
+%description javadoc -l pl.UTF-8
 Dokumentacja javadoc dla pakietu Apache XML Commons Resolver.
 
 %prep
