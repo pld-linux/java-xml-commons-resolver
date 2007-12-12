@@ -1,8 +1,9 @@
+%include	/usr/lib/rpm/macros.java
 Summary:	Apache XML Commons Resolver classes
 Summary(pl.UTF-8):	Klasy Apache XML Commons Resolver
 Name:		xml-commons-resolver
 Version:	1.2
-Release:	1
+Release:	2
 License:	Apache v1.1
 Group:		Development/Languages/Java
 Source0:	http://www.apache.org/dist/xml/commons/%{name}-%{version}.tar.gz
@@ -11,9 +12,10 @@ URL:		http://xml.apache.org/commons/
 BuildRequires:	ant
 BuildRequires:	jdk
 BuildRequires:	jpackage-utils
+BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
+Requires:	jpackage-utils
 BuildArch:	noarch
-ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,12 +41,10 @@ Dokumentacja javadoc dla pakietu Apache XML Commons Resolver.
 %prep
 %setup -q
 
-rm -rf `find . -name "*.jar"`
-mv -f resolver.xml build.xml
+find -name "*.jar" | xargs rm -v
+mv resolver.xml build.xml
 
 %build
-export JAVA_HOME="%{java_home}"
-
 %ant jar javadocs
 
 %install
@@ -55,25 +55,21 @@ install build/resolver.jar $RPM_BUILD_ROOT%{_javadir}/resolver-%{version}.jar
 ln -sf resolver-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/resolver.jar
 
 install -d $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
-cp -pr build/apidocs/resolver/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
+cp -a build/apidocs/resolver/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
+ln -s %{name}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{name} # ghost symlink
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post javadoc
-rm -f %{_javadocdir}/%{name}
-ln -s %{name}-%{version} %{_javadocdir}/%{name}
-
-%postun javadoc
-if [ "$1" = "0" ]; then
-	rm -f %{_javadocdir}/%{name}
-fi
+ln -nfs %{name}-%{version} %{_javadocdir}/%{name}
 
 %files
 %defattr(644,root,root,755)
 %doc KEYS LICENSE.resolver.txt
-%{_javadir}/resolver*.jar
+%{_javadir}/*.jar
 
 %files javadoc
 %defattr(644,root,root,755)
 %{_javadocdir}/%{name}-%{version}
+%ghost %{_javadocdir}/%{name}
