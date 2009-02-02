@@ -5,7 +5,7 @@ Name:		xml-commons-resolver
 Version:	1.2
 Release:	2
 License:	Apache v1.1
-Group:		Development/Languages/Java
+Group:		Libraries/Java
 Source0:	http://www.apache.org/dist/xml/commons/%{name}-%{version}.tar.gz
 # Source0-md5:	46d52acdb67ba60f0156043f30108766
 URL:		http://xml.apache.org/commons/
