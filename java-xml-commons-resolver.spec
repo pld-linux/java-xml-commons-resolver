@@ -17,6 +17,8 @@ BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jpackage-utils
+Provides:	xml-commons-resolver
+Obsoletes:	xml-commons-resolver
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,6 +35,7 @@ Summary:	javadoc documentation for Apache XML Commons Resolver
 Summary(pl.UTF-8):	Dokumentacja javadoc dla pakietu Apache XML Commons Resolver
 Group:		Documentation
 Requires:	jpackage-utils
+Obsoletes:	xml-commons-resolver-javadoc
 
 %description javadoc
 javadoc documentation for Apache XML Commons Resolver.
