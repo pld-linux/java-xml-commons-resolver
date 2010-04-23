@@ -1,8 +1,3 @@
-%if "%{pld_release}" == "ti"
-%bcond_without	java_sun	# build with gcj
-%else
-%bcond_with	java_sun	# build with java-sun
-%endif
 %include	/usr/lib/rpm/macros.java
 #
 %define	srcname	xml-commons-resolver
@@ -17,10 +12,8 @@ Source0:	http://www.apache.org/dist/xml/commons/%{srcname}-%{version}.tar.gz
 # Source0-md5:	46d52acdb67ba60f0156043f30108766
 URL:		http://xml.apache.org/commons/
 BuildRequires:	ant
-%{!?with_java_sun:BuildRequires:	java-gcj-compat-devel}
-%{?with_java_sun:BuildRequires:	java-sun}
+BuildRequires:	jdk
 BuildRequires:	jpackage-utils
-BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jpackage-utils
