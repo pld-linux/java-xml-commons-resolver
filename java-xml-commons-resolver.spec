@@ -1,11 +1,10 @@
-%include	/usr/lib/rpm/macros.java
-#
 %define	srcname	xml-commons-resolver
+%include	/usr/lib/rpm/macros.java
 Summary:	Apache XML Commons Resolver classes
 Summary(pl.UTF-8):	Klasy Apache XML Commons Resolver
 Name:		java-xml-commons-resolver
 Version:	1.2
-Release:	3
+Release:	4
 License:	Apache v1.1
 Group:		Libraries/Java
 Source0:	http://www.apache.org/dist/xml/commons/%{srcname}-%{version}.tar.gz
@@ -17,7 +16,6 @@ BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jpackage-utils
-Provides:	xml-commons-resolver
 Obsoletes:	xml-commons-resolver
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
