@@ -1,5 +1,4 @@
 %define	srcname	xml-commons-resolver
-%include	/usr/lib/rpm/macros.java
 Summary:	Apache XML Commons Resolver classes
 Summary(pl.UTF-8):	Klasy Apache XML Commons Resolver
 Name:		java-xml-commons-resolver
