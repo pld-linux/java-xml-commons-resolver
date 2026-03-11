@@ -3,7 +3,7 @@ Summary:	Apache XML Commons Resolver classes
 Summary(pl.UTF-8):	Klasy Apache XML Commons Resolver
 Name:		java-xml-commons-resolver
 Version:	1.2
-Release:	4
+Release:	5
 License:	Apache v1.1
 Group:		Libraries/Java
 Source0:	http://www.apache.org/dist/xml/commons/%{srcname}-%{version}.tar.gz
