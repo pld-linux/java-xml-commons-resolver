@@ -1,19 +1,21 @@
+%{?use_default_jdk:%use_default_jdk 8}
+
 %define	srcname	xml-commons-resolver
 Summary:	Apache XML Commons Resolver classes
 Summary(pl.UTF-8):	Klasy Apache XML Commons Resolver
 Name:		java-xml-commons-resolver
 Version:	1.2
-Release:	6
+Release:	7
 License:	Apache v1.1
 Group:		Libraries/Java
 Source0:	http://www.apache.org/dist/xml/commons/%{srcname}-%{version}.tar.gz
 # Source0-md5:	46d52acdb67ba60f0156043f30108766
 URL:		http://xml.apache.org/commons/
 BuildRequires:	ant
-BuildRequires:	jdk
+%buildrequires_jdk
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
-BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	rpmbuild(macros) >= 1.556
 Requires:	jpackage-utils
 Obsoletes:	xml-commons-resolver
 BuildArch:	noarch
